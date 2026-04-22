@@ -1,6 +1,6 @@
 import prisma from '../lib/prisma.js';
 
-// Get wallet Balance
+// Get wallet
 export const getWalletBalance = async (req, res) => {
   try {
     const wallet = await prisma.wallet.findUnique({
