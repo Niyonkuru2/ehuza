@@ -25,10 +25,10 @@
     "validator": "^13.15.0"
   },
   "devDependencies": {
-    "@prisma/client": "^6.7.0",
+    "@prisma/client": "^6.19.3",
     "jest": "^30.3.0",
     "nodemon": "^3.1.10",
-    "prisma": "^7.8.0",
+    "prisma": "^6.19.3",
     "supertest": "^7.2.2"
   }
 }

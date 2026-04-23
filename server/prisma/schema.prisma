@@ -12,7 +12,7 @@ model User {
   name       String
   email      String   @unique
   password   String
-  imageUrl   String?  // profile image URL from Cloudinary
+  imageUrl   String?
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
@@ -20,24 +20,24 @@ model User {
 }
 
 model Wallet {
-  walletId   Int      @id @default(autoincrement())
-  userId     Int      @unique
-  balance    Float    @default(0.0)
-  createdAt  DateTime @default(now())
+  walletId    Int           @id @default(autoincrement())
+  userId      Int           @unique
+  balance     Float         @default(0.0)
+  createdAt   DateTime      @default(now())
 
-  user       User     @relation(fields: [userId], references: [userId])
+  user        User          @relation(fields: [userId], references: [userId])
   transactions Transaction[]
 }
 
 model Transaction {
-  transactionId Int      @id @default(autoincrement())
+  transactionId Int              @id @default(autoincrement())
   walletId      Int
   amount        Float
   type          TransactionType
   description   String?
-  createdAt     DateTime @default(now())
+  createdAt     DateTime         @default(now())
 
-  wallet        Wallet   @relation(fields: [walletId], references: [walletId])
+  wallet        Wallet           @relation(fields: [walletId], references: [walletId])
 }
 
 enum TransactionType {
