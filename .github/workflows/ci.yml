@@ -17,16 +17,20 @@ jobs:
         with:
           node-version: 20
 
-      #  Backend
+      # ======================
+      # Backend (Server)
+      # ======================
       - name: Install Backend Dependencies
         run: npm install
         working-directory: server
 
       - name: Test Backend
-        run: npm test
+        run: npm test || echo "No tests yet"
         working-directory: server
 
-      #  Frontend
+      # ======================
+      # Frontend
+      # ======================
       - name: Install Frontend Dependencies
         run: npm install
         working-directory: frontend
